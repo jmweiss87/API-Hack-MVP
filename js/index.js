@@ -35,7 +35,7 @@ function submitHandler(event) {
 function successHandler(data) {
   console.log("DATA", data);
   const breaches = data.map((breach, index) => renderBreaches(breach, index));
-  $('.js-results').html(breaches);
+  $('#js-results').html(breaches);
 }
 
 function renderBreaches(breach, index){
