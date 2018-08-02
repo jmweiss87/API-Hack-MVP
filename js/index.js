@@ -39,11 +39,7 @@ function successHandler(data) {
 }
 
 function renderBreaches(breach, index){
- return
-  `
-    <div class ="breach-results">${breach.Title}<div>
-  `
-}
+ return `<div class ="breach-results">${breach.Title}<div>`;}
 
 // form class or id for submit is target.
 $(watchSubmit);
