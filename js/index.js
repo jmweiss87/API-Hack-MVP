@@ -11,6 +11,7 @@ function getPwned(account, successHandler){
 // function for success, call successHandler, pass successHandler as
 // a parameter to getPwned(successHandler), ie.
 // send queryTarget over to getPwned so can work with them.
+
 /* Handles the event when the user submits the email address */
 function watchSubmit(){
   $( ".js-search-form" ).submit(submitHandler);
@@ -21,6 +22,7 @@ function submitHandler(event) {
   event.preventDefault();  
   const queryTarget = $(event.currentTarget).find('.js-query');
   const queryVal = queryTarget.val();
+  // queryVal.val("") ?
   //now I want to take this query, send it in ajax call.
   //so..account is going to equal queryVal....
   console.log("queryVal: ", queryVal);
@@ -28,14 +30,20 @@ function submitHandler(event) {
 }
 
 /* Outputs data to the console log */
+// map call in here....
+// inconsistency here...with the parameer, breach or breaches...hmm maybe not.
 function successHandler(data) {
   console.log("DATA", data);
+  const breaches = data.map((breach, index) => renderBreaches(breach, index));
+  $('.js-results').html(breaches);
+}
+
+function renderBreaches(breach, index){
+ return
+  `
+    <div class ="breach-results">${breach.Title}<div>
+  `
 }
 
 // form class or id for submit is target.
 $(watchSubmit);
-
-
-
-//const HAVE_BEEN_PWNED_URL = `https://haveibeenpwned.com/api/v2/breachedaccount/${account}`;
-// GET https://haveibeenpwned.com/api/v2/{service}/{parameter}
