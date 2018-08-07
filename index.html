@@ -14,15 +14,15 @@
     </head>
     <body>
         <main role="main">
-            <div>
+            <div class ="title-container">
                 <h1>API-Hack Capstone MVP</h1>
                 <h2>See if you've been pwned:</h2>
+                <form id="heading" action="#" class="js-search-form">
+                    <label aria-labelledby="search-query" for="query"></label>
+                    <input id="search-query" type="text" class="js-query" aria-label="search-query">
+                    <button id="button-style" type="submit">Search</button>
+                </form>
             </div>
-            <form id="heading" action="#" class="js-search-form">
-                <label aria-labelledby="search-query" for="query"></label>
-                <input id="search-query" type="text" class="js-query" aria-label="search-query">
-                <button id="button-style" type="submit">Search</button>
-              </form>
             <div id="js-results">
                 <!-- js-results go here -->
             </div>

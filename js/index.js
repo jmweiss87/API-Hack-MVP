@@ -38,6 +38,9 @@ function successHandler(data) {
   $('#js-results').html(breaches);
 }
 
+// notice how breaches includes your function renderBreaches, thus the variable is passing it to id #js-results
+// this shows how your div breach-results ended up in the correct place.
+
 function renderBreaches(breach, index){
  return `<div class ="breach-results">${breach.Title}<div>`;}
 

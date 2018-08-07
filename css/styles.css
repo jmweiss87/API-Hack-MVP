@@ -1,3 +1,17 @@
-* {
-box-sizing: border-box;
+* {box-sizing: border-box;}
+
+.title-container {
+    text-align: center;
 }
+
+main {
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+
+
+/* Mobile First, not graceful degradation */
+@media only screen and (max-width: 1200px){
+
+}    
