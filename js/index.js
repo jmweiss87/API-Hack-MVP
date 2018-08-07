@@ -41,8 +41,14 @@ function successHandler(data) {
 // notice how breaches includes your function renderBreaches, thus the variable is passing it to id #js-results
 // this shows how your div breach-results ended up in the correct place.
 
+//need to find out about images for company, logos.
+
 function renderBreaches(breach, index){
- return `<div class ="breach-results">${breach.Title}<div>`;}
+ return `<div class ="breach-results">
+ <h1>${breach.Name}</h1>
+ <h2>${breach.Domain}</h2>
+ <h3>${breach.Description}</h3>
+ <div>`;}
 
 // form class or id for submit is target.
 $(watchSubmit);
