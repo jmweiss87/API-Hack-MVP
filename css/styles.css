@@ -1,15 +1,43 @@
 * {box-sizing: border-box;}
 
+
 .title-container {
     text-align: center;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-color: #FFBB00;
+    color: #909CC2;
+    font-size: 1.5rem;
 }
 
 main {
     font-family: "Times New Roman", Times, serif;
 }
 
+.results-container{
+    background-color: #084887;
+}
 
+.results-container p{
+    margin: 0px;
+}
 
+.top-nav{
+    display: inline-block;
+}
+
+h1 .top-nav{
+    margin: 0px;
+}
+
+.js-search-form{
+    display: inline-block;
+    padding-left: 8px;
+}
+
+.breach-results>h1{
+    margin: 0;
+}
 
 /* Mobile First, not graceful degradation */
 @media only screen and (max-width: 1200px){
