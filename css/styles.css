@@ -5,18 +5,25 @@
     text-align: center;
     padding-top: 1px;
     padding-bottom: 1px;
-    background-color: #FFBB00;
+    background-color: #F9AB55;
     color: #909CC2;
-    font-size: 1.4rem;
+    font-size: 1.4em;
+    font-weight: 900;
 }
 
 main {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Cairo', sans-serif;
 }
 
 .results-container{
-    background-color: #084887;
+    background-color: #909CC2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+/* .breach-results{
+    justify-self: center;
+} */
 
 .results-container p{
     margin: 0px;
@@ -35,6 +42,28 @@ h1 .top-nav{
     padding-left: 6rem;
 }
 
+input {
+    padding: 0px 0px 0px 4px;
+    border: 0;
+    height: 23px;
+    margin-right: 6px;
+    border-radius: 10px;
+}
+
+button{
+    padding: 0px 5px 0px 5px;
+    border: 0px;
+    height: 25px;
+    line-height: 1px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    color: white;
+    background-color: black; 
+}
+
 .breach-results>h1{
     margin: 0;
 }
@@ -43,6 +72,18 @@ h1 .top-nav{
     display: inline-block;
     padding-right: 6rem;
 }
+
+.site-navigation{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-decoration: none;
+}
+
+ul>li{
+    justify-self: center;
+    list-style-type: none;
+}
+
 
 /* Mobile First, not graceful degradation */
 @media only screen and (max-width: 1200px){
