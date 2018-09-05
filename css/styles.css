@@ -77,8 +77,19 @@ button:hover{
     background-color: black; 
 }
 
+.breach-results{
+    text-align: center;
+    border: 1px black solid;
+}
+
 .breach-results>h1{
+    text-align: center;
     margin: 0;
+    padding-top: 12px;
+}
+
+.breach-results>h3{
+    padding: 0px 20px 0px 20px;
 }
 
 ul>li{
