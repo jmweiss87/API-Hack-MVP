@@ -97,6 +97,16 @@ ul>li{
     list-style-type: none;
 }
 
+li>a{
+    text-decoration: none;
+    color: #084887;
+    font-weight: 600;
+}
+
+li>a:hover{
+    color: #FFBB00;
+}
+
 
 /* Mobile First, not graceful degradation */
 @media only screen and (max-width: 1200px){
