@@ -45,10 +45,13 @@ function successHandler(data) {
 
 function renderBreaches(breach, index){
  return `<div class ="breach-results">
+
  <h1>Company: ${breach.Name}</h1>
  <h2>Domain: ${breach.Domain}</h2>
- <h3>Breach Description${breach.Description}</h3>
+ <h3>Breach Description: ${breach.Description}</h3>
  <div>`;}
 
 // form class or id for submit is target.
 $(watchSubmit);
+
+//<img src=${breach.LogoType}>
