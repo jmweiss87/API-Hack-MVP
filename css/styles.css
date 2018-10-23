@@ -34,7 +34,7 @@ main {
 }
 
 .results-container{
-    background-color: #909CC2;
+    /* background-color: #909CC2; */
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -80,6 +80,9 @@ button:hover{
 .breach-results{
     text-align: center;
     border: 1px black solid;
+    border-radius: 50px;
+    background-color: #909CC2;
+    margin: 15px;
 }
 
 .breach-results>h1{

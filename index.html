@@ -12,11 +12,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
         <link href="https://fonts.googleapis.com/css?family=Cairo|Maven+Pro|Oswald|PT+Sans+Caption" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <!-- <link href="css/float-grid.css" rel="stylesheet" type="text/css"> -->
     </head>
     <body>
         <main role="main">
             <div class ="title-container">
-                <h4 class="top-nav"><span class="title-spacing">API-HACK CAPSTONE MVP</span> SEE IF YOU'VE BEEN PWNED
+                <h4 class="top-nav"><span class="title-spacing">EMAIL ACCOUNT SECURITY</span> SEE IF YOUR ACCOUNT HAS BEEN BREACHED:
                     <form id="heading" action="#" class="js-search-form">
                         <label aria-labelledby="search-query" for="query"></label>
                         <input id="search-query" type="text" class="js-query" aria-label="search-query">
@@ -25,10 +26,10 @@
                 </h4>    
             </div>
             <ul class ="site-navigation">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Solutions</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="js-link" value="0"> Home</li>
+                <li class="js-link" value="1"> Solutions</li>
+                <li class="js-link" value="2"> About</li>
+                <li class="js-link" value="3"> Contact</li>
             </ul>
             <div class="results-container" id="js-results">
                 <!-- js-results here, <div class="breach-results" is individual grid item> -->
