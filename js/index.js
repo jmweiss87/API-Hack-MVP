@@ -11,12 +11,17 @@ const pages = [
     body: "Solutions Page"
   },
   {
-    title: "About",
-    body: "About Page"
+    title: "About Me",
+    subtitle: "John Weiss",
+    body: "Hey there! Thanks for visiting my page!" + " This is a project I put together to practice making API calls and displaying the data." 
+     + " I went to University of South Carolina for college, have done various front-end freelance projects, and am working" 
+     + " on becoming a full stack developer. I hope you enjoy, and find use in this page!",
+    img: "addOne.png"
   },
   {
-    title: "Cotact",
-    body: "Contact Page"
+    title: "Contact",
+    subtitle: "John Weiss",
+    body: "jmweiss87@gmail.com"
   }
 ]
 
@@ -62,6 +67,8 @@ function successHandler(data) {
 
 //need to find out about images for company, logos.
 
+// need to format/style the html here.
+
 function renderBreaches(breach, index){
  return `<div class ="breach-results">
 
@@ -90,8 +97,8 @@ $('.js-link').on('click', function (event){
   $('#js-results').html(  
 
   ` 
-    <h1>Test</h1>
-    <h2>${pages[index].title}</h2>
+    <h1>${pages[index].title}</h1>
+    <h2>${pages[index].subtitle}</h2>
     <h3>${pages[index].body}</h3>
     <br>
   `      

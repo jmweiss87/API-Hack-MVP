@@ -37,6 +37,8 @@ main {
     /* background-color: #909CC2; */
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .results-container p{
@@ -81,7 +83,7 @@ button:hover{
     text-align: center;
     border: 1px black solid;
     border-radius: 50px;
-    background-color: #909CC2;
+    background-color: rgba(144, 156, 194, 0.699);
     margin: 15px;
 }
 
@@ -111,7 +113,52 @@ li>a:hover{
 }
 
 
-/* Mobile First, not graceful degradation */
-@media only screen and (max-width: 1200px){
+/* Remember that the media queries CASCADE (just like the rest of CSS, but overarching obvi) */
 
-}    
+/* ADD a hamburger Nav for Portrait Mobile! */
+
+/* Mobile Screen (actual change more like 660px*/
+/* @media only screen and (max-width: 600px){
+    .results-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .site-navigation{
+    }
+}     */
+
+
+/* iPads (landscape) ----------- */
+@media only screen and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+    }
+    
+ /* iPads (portrait) ----------- */
+@media only screen and (max-device-width : 1024px) and (orientation : portrait) {
+    /* Styles */
+    }
+
+
+ /* Smartphones (landscape) ----------- */
+@media only screen and (max-width: 768px) {
+    /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 425px) {
+    .results-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .title-spacing {
+        display: inline-block;
+        padding-right: .5em;
+    }
+}
+
+/* Not sure what other styles to add. */
