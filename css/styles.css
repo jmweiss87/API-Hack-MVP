@@ -34,7 +34,6 @@ main {
 }
 
 .results-container{
-    /* background-color: #909CC2; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-left: 15px;
@@ -79,7 +78,7 @@ button:hover{
     background-color: black; 
 }
 
-.breach-results{
+.breach-results, .page-results{
     text-align: center;
     border: 1px black solid;
     border-radius: 50px;
@@ -87,13 +86,13 @@ button:hover{
     margin: 15px;
 }
 
-.breach-results>h1{
+.breach-results>h1, .page-results>h1{
     text-align: center;
     margin: 0;
     padding-top: 12px;
 }
 
-.breach-results>h3{
+.breach-results>h3, .page-results>h3{
     padding: 0px 20px 0px 20px;
 }
 
@@ -110,6 +109,13 @@ li>a{
 
 li>a:hover{
     color: #FFBB00;
+}
+
+.page-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 

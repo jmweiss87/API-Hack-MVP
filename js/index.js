@@ -4,11 +4,11 @@ state = {};
 const pages = [
   {
     title: "Home",
-    body: "Home Page"
+    body: "Explanation of the search bar."
   },
   {
     title: "Solutions",
-    body: "Solutions Page"
+    body: "Suggestions for Computer Security and Best Practices."
   },
   {
     title: "About Me",
@@ -58,6 +58,7 @@ function submitHandler(event) {
 // inconsistency here...with the parameer, breach or breaches...hmm maybe not.
 function successHandler(data) {
   console.log("DATA", data);
+  showSearchResults();
   const breaches = data.map((breach, index) => renderBreaches(breach, index));
   $('#js-results').html(breaches);
 }
@@ -71,11 +72,10 @@ function successHandler(data) {
 
 function renderBreaches(breach, index){
  return `<div class ="breach-results">
-
  <h1>Company: ${breach.Name}</h1>
  <h2>Domain: ${breach.Domain}</h2>
  <h3>Breach Description: ${breach.Description}</h3>
- <div>`;}
+ </div>`;}
 
 // form class or id for submit is target.
 $(watchSubmit);
@@ -92,18 +92,49 @@ $('.js-link').on('click', function (event){
   // would like to swtich back to val() instead of this.value...looking into.
   // the lines 87 and 88 are the same fyi.
   console.log(this.value);
+  $('.results-container').hide();
   // console.log(event.currentTarget.value);
   let index = this.value;
-  $('#js-results').html(  
-
-  ` 
-    <h1>${pages[index].title}</h1>
-    <h2>${pages[index].subtitle}</h2>
-    <h3>${pages[index].body}</h3>
-    <br>
-  `      
-  )
+  $('.page-container').show();
+  let finalString = pageAssembler(pages[index]);
+  $('.page-container').html(finalString);
 });
+
+function showSearchResults(){
+  $(".page-container").hide();
+  $(".results-container").show();
+}
+
+function pageAssembler(page){
+  let resultString = 
+  `
+  <div class="page-results">
+    <h1>${page.title}</h1>
+  `;
+  if (page.subtitle!==null){
+    resultString += `<h2>${page.subtitle}</h2>`;
+  }
+  resultString+= `<h3>${page.body}</h3>
+  </div>
+  `;
+  return resultString;
+}
+
+
+
+
+// ` 
+// <div class="page-results">
+//   <h1>${pages[index].title}</h1>
+//   <h2>${pages[index].subtitle}</h2>
+//   <h3>${pages[index].body}</h3>
+// </div>
+// `      
+
+//hide page container, show results container
+
+// now when someone clicks search, hide the page-container.
+// now, how to re-use the breach results CSS.
 
 // getting uncaught typererror, cannot read property of title of undefined
 // Now the number values are connected, 0,1,2,3...
