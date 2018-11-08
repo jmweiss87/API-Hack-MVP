@@ -3,8 +3,9 @@ state = {};
 
 const pages = [
   {
-    title: "Home",
-    body: "Explanation of the search bar."
+    title: "Welcome!",
+    subtitle: "Explanation of what this site is about.",
+    body: "The search bar above the navigation is designed for you to input your email. Once you have done that and click search it will find all of the known accounts with your email that have been breached in recent years. Thus, at that point it would be a good idea to change your password. More security tips and information are on the Solutions page! "
   },
   {
     title: "Solutions",
