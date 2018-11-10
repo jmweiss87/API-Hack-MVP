@@ -32,6 +32,41 @@ function getPwned(account, successHandler){
   $.getJSON( `https://haveibeenpwned.com/api/v2/breachedaccount/${account}`, successHandler);
 }
 
+function callMapAPI(breach, index){
+  var map;
+  var service;
+  var infowindow;
+
+  function initMap() {
+    var mapCenter = new google.maps.LatLng(-33.8617374,151.2021291); // This is starting point for map
+    //on line 43, change the 'map' in there to a variable....
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: mapCenter,
+      zoom: 15  // obvi, the zoom or starting zoom for the map
+    });
+    // query on 49 needs to be based on the breach name, `${breach.name}`
+    var request = {
+      query: `${breach.name}`,
+      // fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
+    };
+
+    service = new google.maps.places.PlacesService(map);
+    service.findPlaceFromQuery(request, callback);
+  }
+
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        createMarker(results[i]);  // do some research on createMarker method and what it does...
+      }
+    }
+  }
+}
+
+function handleMaps(data) {
+  const breaches = data.map((breach, index) => callMapAPI(breach, index));
+}
 
 // function for success, call successHandler, pass successHandler as
 // a parameter to getPwned(successHandler), ie.
@@ -47,7 +82,6 @@ function submitHandler(event) {
   event.preventDefault();  
   const queryTarget = $(event.currentTarget).find('.js-query');
   const queryVal = queryTarget.val();
-  // queryVal.val("") ?
   //now I want to take this query, send it in ajax call.
   //so..account is going to equal queryVal....
   console.log("queryVal: ", queryVal);
@@ -56,20 +90,17 @@ function submitHandler(event) {
 
 /* Outputs data to the console log */
 // map call in here....
-// inconsistency here...with the parameer, breach or breaches...hmm maybe not.
 function successHandler(data) {
   console.log("DATA", data);
   showSearchResults();
   const breaches = data.map((breach, index) => renderBreaches(breach, index));
   $('#js-results').html(breaches);
+  //handleMaps(); this should be be where handleMaps(); is called! what parameter?
 }
 
-// notice how breaches includes your function renderBreaches, thus the variable is passing it to id #js-results
+// notice how breaches includes your function renderBreaches, thus the variable is passing it to 
+// id #js-results
 // this shows how your div breach-results ended up in the correct place.
-
-//need to find out about images for company, logos.
-
-// need to format/style the html here.
 
 function renderBreaches(breach, index){
  return `<div class ="breach-results">
@@ -90,8 +121,7 @@ $('.js-link').on('click', function (event){
   event.preventDefault();
   // let index= event.val();
   // the above did not work, this.value and event.currentTarget.value both worked same.
-  // would like to swtich back to val() instead of this.value...looking into.
-  // the lines 87 and 88 are the same fyi.
+
   console.log(this.value);
   $('.results-container').hide();
   // console.log(event.currentTarget.value);
@@ -122,6 +152,35 @@ function pageAssembler(page){
 }
 
 
+// var map;
+// var service;
+// var infowindow;
+
+// function initMap() {
+//   var mapCenter = new google.maps.LatLng(-33.8617374,151.2021291);
+
+//   map = new google.maps.Map(document.getElementById('map'), {
+//     center: mapCenter,
+//     zoom: 15
+//   });
+
+//   var request = {
+//     query: 'Museum of Contemporary Art Australia',
+//     fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
+//   };
+
+//   service = new google.maps.places.PlacesService(map);
+//   service.findPlaceFromQuery(request, callback);
+// }
+
+// function callback(results, status) {
+//   if (status == google.maps.places.PlacesServiceStatus.OK) {
+//     for (var i = 0; i < results.length; i++) {
+//       var place = results[i];
+//       createMarker(results[i]);
+//     }
+//   }
+// }
 
 
 // ` 
