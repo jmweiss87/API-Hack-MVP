@@ -1,11 +1,11 @@
-// jQuery.getJSON  url [, data ] [, success ] 
 state = {};
 
 const pages = [
   {
-    title: "Welcome!",
-    subtitle: "Explanation of what this site is about.",
-    body: "The search bar above the navigation is designed for you to input your email. Once you have done that and click search it will find all of the known accounts with your email that have been breached in recent years. Thus, at that point it would be a good idea to change your password. More security tips and information are on the Solutions page! "
+    title: "Welcome! Let's Check Up On Your Online Account Security",
+    subtitle: "Please type your email address in the search form above and click search in order to find out security information about your online accounts associated with that email.",
+    body: "The search form at the top right of the page is designed to take the email you input and search for accounts associated with that email (email used for accounts with companies) that have been breached by hackers. The extent of that breach is also important, thus the query will look for news surrounding the company data breach."  
+     + "It will attempt to find all of the known accounts with your email that have been breached(a data breach by an outside person or group) in recent years. For online security best practices, information, and helpful application suggestions click the Solutions tab above."
   },
   {
     title: "Solutions",
@@ -16,7 +16,7 @@ const pages = [
     subtitle: "John Weiss",
     body: "Hey there! Thanks for visiting my page!" + " This is a project I put together to practice making API calls and displaying the data." 
      + " I went to University of South Carolina for college, have done various front-end freelance projects, and am working" 
-     + " on becoming a full stack developer. I hope you enjoy, and find use in this page!",
+     + " on becoming a full stack developer. I hope you enjoy this application, and find use in the information provided to better protect your data.",
     img: "addOne.png"
   },
   {
@@ -68,7 +68,6 @@ $(watchSubmit);
 
 
 /* HTML Links */
-
 $('.js-link').on('click', function (event){
   event.preventDefault();
   console.log(this.value);

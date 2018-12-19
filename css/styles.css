@@ -119,22 +119,9 @@ li>a:hover{
 }
 
 
-/* Remember that the media queries CASCADE (just like the rest of CSS, but overarching obvi) */
 
 /* ADD a hamburger Nav for Portrait Mobile! */
 
-/* Mobile Screen (actual change more like 660px*/
-/* @media only screen and (max-width: 600px){
-    .results-container{
-        display: grid;
-        grid-template-columns: 1fr;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .site-navigation{
-    }
-}     */
 
 
 /* iPads (landscape) ----------- */
@@ -166,5 +153,3 @@ li>a:hover{
         padding-right: .5em;
     }
 }
-
-/* Not sure what other styles to add. */
